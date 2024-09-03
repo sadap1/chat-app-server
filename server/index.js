@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 require("dotenv").config();
 
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({credentials: true, origin: 'https://chat-app-server-7su1.onrender.com'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", userRoutes);
@@ -20,7 +20,7 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-app-server-7su1.onrender.com",
     credentials: true,
   },
 });
